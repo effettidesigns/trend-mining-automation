@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 # Configurazione Notion
-notion = Client(auth=os.environ["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"])
-DATABASE_ID = os.environ["1f3a908a809f80c3a9acfe3ed6e0cee9?v=1f3a908a809f81fc8470000c224ca709&pvs=4"]
+notion = Client(auth=os.environ["NOTION_TOKEN"])
+DATABASE_ID = os.environ["NOTION_DB_ID"]
 
 # Funzione di scraping di esempio (Instagram hashtag - NON funzionerà senza browser automation o API)
 def scrape_instagram_hashtag(sportsdesign):
