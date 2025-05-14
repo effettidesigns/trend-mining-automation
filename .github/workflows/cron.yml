@@ -1,6 +1,7 @@
 name: Trend Mining Weekly
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 8 * * MON'  # ogni lunedì alle 08:00 UTC (10:00 Roma)
 
