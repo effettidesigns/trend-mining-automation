@@ -1,9 +1,9 @@
 name: Trend Mining Weekly
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # per avviare manualmente
   schedule:
-    - cron: '0 8 * * MON'  # ogni lunedì alle 08:00 UTC (10:00 Roma)
+    - cron: '0 8 * * MON'
 
 jobs:
   build:
@@ -19,6 +19,6 @@ jobs:
         pip install notion-client beautifulsoup4 requests
     - name: Run Trend Mining
       env:
-        NOTION_TOKEN: ${{ secrets.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 }}
-        NOTION_DB_ID: ${{ secrets.1f3a908a809f80c3a9acfe3ed6e0cee9?v=1f3a908a809f81fc8470000c224ca709&pvs=4 }}
+        NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
       run: python trend_mining.py
