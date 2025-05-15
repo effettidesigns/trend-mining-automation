@@ -16,7 +16,7 @@ def scrape_instagram_hashtag(sportsdesign):
     # Qui invece, simuleremo dei trend fittizi
     trends = [
         {
-            "trend": f"#{sportsdesign} graphics evolution",
+            "trend": f"Sport design graphics evolution",
             "desc": "New design trend spotted in sport visuals with high contrast typography.",
             "link": f"https://www.instagram.com/explore/tags/{sportsdesign}/",
             "category": "Visual Design",
@@ -40,7 +40,7 @@ def push_to_notion(entry):
         "Trend Name": {"title":[{"text":{"content": entry["trend"]}}]},
         "Description": {"rich_text":[{"text":{"content": entry["desc"]}}]},
         "Link": {"url": entry["link"]},
-        "Category": {"multi_select": {"name": entry["category"]}},
+       "Category": {"multi_select": [{"name": c} for c in entry["category"]]},
         "Possible application": {"rich_text":[{"text":{"content": entry["application"]}}]},
         "Import date": {"date": {"start": entry["date"]}}
     })
